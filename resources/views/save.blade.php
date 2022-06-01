@@ -9,19 +9,15 @@
 </head>
 <body>
     <section class="section">
-        <h1 class="section__title">
-            Сгенерированные договоры
-        </h1>
+        <h1 class="section__title">Сгенерированные договоры</h1>
         <table>
-        @foreach($data as $datas)
-            <tr>    
-                <td>{{$datas->id}}</td>
-                <td>Договор №{{$datas->num_contract}}</td>
-                <td>
-                    <a href="{{ url('views/' . $datas->id)}}">Скачать файл</a>
-                </td>
-            </tr>
-        @endforeach
+            @foreach($data as $dataItem)
+                <tr>
+                    <td>{{$dataItem->id}}</td>
+                    <td>Договор №{{$dataItem->num_contract}}</td>
+                    <td><a href="{{ route('download', ['id' => $dataItem->id])}}">Скачать файл</a></td>
+                </tr>
+            @endforeach
         </table>
    </section>
 </body>

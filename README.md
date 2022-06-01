@@ -1,1 +1,1 @@
-# Document generator for Laravel
+# Document generator

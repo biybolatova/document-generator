@@ -9,16 +9,14 @@
 </head>
 <body>
     <section class="section">
-        <h1 class="section__title">
-            Генерация договора
-        </h1>
-        <form method="POST" action="{{ route('save-contracts') }}" class="section__form">
-        @csrf 
+        <h1 class="section__title"> Генерация договора</h1>
+        <form method="POST" action="{{ route('save') }}" class="section__form">
+            @csrf
             <input type="text" name="num_contract" class="section__form-input" placeholder="Номер договора">
             <input type="text" name="name_company" class="section__form-input" placeholder="Название компании">
-            <input type="text" name="rek_company" class="section__form-input" placeholder="Реквизиты компании">
-            <input type="text" name="name_contragent" class="section__form-input" placeholder="Название контрагента">
-            <input type="text" name="rek_contragent" class="section__form-input" placeholder="Реквизиты контрагента">
+            <input type="text" name="requisites_company" class="section__form-input" placeholder="Реквизиты компании">
+            <input type="text" name="name_counterparty" class="section__form-input" placeholder="Название контрагента">
+            <input type="text" name="requisites_counterparty" class="section__form-input" placeholder="Реквизиты контрагента">
             <input type="submit" class="btn" value="Сгенерировать договор">
         </form>
     </section>

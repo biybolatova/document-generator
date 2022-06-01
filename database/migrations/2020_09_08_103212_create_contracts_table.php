@@ -15,11 +15,11 @@ class CreateContractsTable extends Migration
     {
         Schema::create('contracts', function (Blueprint $table) {
             $table->id();
-            $table->string('num_contract')->nullable();;
-            $table->string('name_company')->nullable();;
-            $table->string('rek_company')->nullable();;
-            $table->string('name_contragent')->nullable();;
-            $table->string('rek_contragent')->nullable();;
+            $table->string('num_contract');
+            $table->string('name_company');
+            $table->string('requisites_company');
+            $table->string('name_counterparty');
+            $table->string('requisites_counterparty');
             $table->timestamps();
         });
     }

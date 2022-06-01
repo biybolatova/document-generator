@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DocController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,16 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Переход на главную страницу
+
 Route::get('/', function () {
     return view('index');
-})->name('index');
-
-Route::get('/save', function () {
-    return view('save');
-})->name('save');
-
-Route::post('/save', 'DocController@submit')->name('save-contracts'); 
-Route::get('/save', 'DocController@all')->name('all-contracts'); 
-Route::get('views/{id}', 'DocController@download'); 
-
+});
+Route::post('/save', [DocController::class, 'create'])->name('save');
+Route::get('/contracts', [DocController::class, 'all'])->name('contracts');
+Route::get('/download/{id}', [DocController::class, 'download'])->name('download');
